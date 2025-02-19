@@ -62,7 +62,6 @@ cd betauia.net
 ```
 3. Copy environment variables and edit them as needed:
 ```bash
-```bash
 cp .env.example .env
 ```
 4. Build and start the Docker containers:
@@ -77,15 +76,12 @@ docker compose up --build
 - Start the application:
 ```bash
 docker compose up  # Use -d to run detached
-docker compose up  # Use -d to run detached
 ```
 
-Access the application at port `3000` (frontend) and `8000` (backend). If `ENV` is set to `production`, the Astro project will be built to `frontend/dist/` and can be hosted via Nginx.
 Access the application at port `3000` (frontend) and `8000` (backend). If `ENV` is set to `production`, the Astro project will be built to `frontend/dist/` and can be hosted via Nginx.
 
 ### Stopping the application
 
-- Stop the application:
 - Stop the application:
 ```bash
 docker compose down
@@ -112,39 +108,6 @@ docker compose down -v
 docker exec -it <container_name_or_id> sh
 ```
 
-- To remove volumes:
-```bash
-docker compose down -v
-```
-
-- To access the shell of the container (N.B.! intended be used for troubleshooting, e.g. check if something is installed correctly after `compose up`)
-```bash
-docker exec -it <container_name_or_id> sh
-```
-
-## Frontend Development and Design
-> **NOTE!** 
-> This is only a temporary solution as the docker setup does not support "hot-reload"/"live-preview" of the changes to the frontend design or content changes. Resulting in you having to recompose with a 10-second wait time for changes on the frontend.
-
-For local frontend development without the backend, follow these steps:
-
-1. Navigate to the `/frontend` directory:
-```sh
-cd frontend
-```
-2. Install the dependencies:
-```sh
-npm install
-```
-3. Start the Astro development server:
-```sh
-npm run dev
-```
-
-Your log will display what port you should localhost into 🖥️. This will start the Astro development server and watch for changes, so you don't need to rebuild each time. 🚀
-
-<!--
-Currently not working, remove quotes when working
 ## Frontend Development and Design
 > **NOTE!** 
 > This is only a temporary solution as the docker setup does not support "hot-reload"/"live-preview" of the changes to the frontend design or content changes. Resulting in you having to recompose with a 10-second wait time for changes on the frontend.
@@ -174,6 +137,7 @@ If you want to clone the games from *game jams*, use:
     ```sh
     git clone --recurse-submodules <repo name>
     ```
+-->
 
 ## Troubleshooting
 > **Q: I got an error where the docker container can't find a module, and I did not add any modules**
